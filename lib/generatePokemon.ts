@@ -1,16 +1,10 @@
-// lib/generatePokemon.ts
 'use server'
 
 
 import { Pokemon, PokemonStats } from '@/types';
 
 import OpenAI from "openai";
-//import fs from "fs";
-console.log(process.env);
-console.log("woaw");
-const openai = new OpenAI({
-  //apiKey: process.env.OPENAI_KEY
-});
+const openai = new OpenAI({});
 
 
 export async function generatePokemon(): Promise<Pokemon> {
