@@ -42,6 +42,11 @@ npm run dev
 
 Then open your browser and go to `http://localhost:3000` to start generating Pokémon!
 
+![Capture d’écran 2025-06-03 à 17 11 10](https://github.com/user-attachments/assets/da8adc90-10cc-4d11-adec-de4eb4d60e4f)
+
+<img width="1511" alt="Capture d’écran 2025-06-03 à 17 28 18" src="https://github.com/user-attachments/assets/20614aee-e832-4de3-9578-96e55a6eeb75" />
+
+
 ## License
 
 This project is licensed under the MIT License.
