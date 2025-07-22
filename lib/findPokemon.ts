@@ -224,12 +224,10 @@ async function findNewPokemon2(typelist:boolean[]): Promise<Pokemon> {
       store: true,
   });
 
-  console.log(name);
   const output = JSON.parse(name.output_text);
   
   // generer image du pokemon
   prompt = "Generate the image of the pokemon with this name,"+output.name+" and description :"+output.description+"\nuse the style and colors from those pokemons :"+output.pokemon_names+"\nThe image should only have the pokemon, nothing else";
-  console.log(prompt);
   
   const image = await openai.images.generate({
       model: "gpt-image-1",
