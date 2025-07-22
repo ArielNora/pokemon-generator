@@ -2,19 +2,33 @@
 
 import { useState } from 'react';
 import PokemonDisplay from './PokemonDisplay';
-import { findPokemon } from '@/lib/findPokemon';
+import { findPokemon,findPokemon2 } from '@/lib/findPokemon';
 import { Pokemon } from '@/types';
+import { pokemonTypes } from "./utils/types";
 
 export default function PokemonGenerator() {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [checkedState, setCheckedState] = useState(
+    new Array(pokemonTypes.length).fill(false)
+  );
+  const handleOnChange = (position:number) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedState(updatedCheckedState);
+  }
+
+
   const handleGeneratePokemon = async () => {
     try {
       setLoading(true);
       setError(null);
-      const newPokemon = await findPokemon();
+      const newPokemon = await findPokemon2(checkedState);
+      //const newPokemon = await findPokemon();
       setPokemon(newPokemon);
     } catch (err) {
       console.error('Error generating pokemon:', err);
@@ -25,7 +39,34 @@ export default function PokemonGenerator() {
   };
   return (
     <div className="space-y-8">
+      <div className="text-center">
+        Choose one or two types !
+      </div>
+      <div >
+        {pokemonTypes.map((name, index) => {
+        const line = (index%6)==5;
+        const disabled = checkedState.filter((state,index) =>  state).length>=2;
+        return (
+          <div className="inline-block w-1/6" key={index}>
+            <input 
+              key={index}
+              type="checkbox" 
+              id={`type-${index}`} 
+              name={name} 
+              value={name} 
+              onChange={() => handleOnChange(index)}
+              disabled={disabled && !checkedState[index]}/>
+            <label htmlFor={`type-${index}`}>{` ${name} `}</label>
+            {line && <br />}
+          </div>
+        );
+        })}
+      </div>
+        
+      
       <div className="flex justify-center">
+        
+          
         <button
           onClick={handleGeneratePokemon}
           disabled={loading}
