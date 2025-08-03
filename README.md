@@ -2,7 +2,7 @@
 
 Welcome to the Pokémon Generator! This project allows you to generate random Pokémon with unique attributes, including names, types, and description.
 
-[![Demo](https://share.gifyoutube.com/KzB6Gb.gif)](https://youtu.be/bo_qxd2meUk?si=EXdmlca8h424y817)
+[Demo of Pokemon Generator Poject](https://youtu.be/bo_qxd2meUk?si=EXdmlca8h424y817)
 
 ## Features
 
@@ -54,3 +54,4 @@ Then open your browser and go to `http://localhost:3000` to start generating Pok
 ## License
 
 This project is licensed under the MIT License.
+
