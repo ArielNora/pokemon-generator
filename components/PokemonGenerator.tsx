@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import PokemonDisplay from './PokemonDisplay';
-import { findPokemon,findPokemon2 } from '@/lib/findPokemon';
+import { findPokemon } from '@/lib/findPokemon';
 import { Pokemon } from '@/types';
 import { pokemonTypes } from "./utils/types";
 
@@ -27,8 +27,7 @@ export default function PokemonGenerator() {
     try {
       setLoading(true);
       setError(null);
-      const newPokemon = await findPokemon2(checkedState);
-      //const newPokemon = await findPokemon();
+      const newPokemon = await findPokemon(checkedState);
       setPokemon(newPokemon);
     } catch (err) {
       console.error('Error generating pokemon:', err);
@@ -45,7 +44,7 @@ export default function PokemonGenerator() {
       <div >
         {pokemonTypes.map((name, index) => {
         const line = (index%6)==5;
-        const disabled = checkedState.filter((state,index) =>  state).length>=2;
+        const disabled = checkedState.filter((state) =>  state).length>=2;
         return (
           <div className="inline-block w-1/6" key={index}>
             <input 

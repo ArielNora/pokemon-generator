@@ -2,15 +2,15 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import sqlite3 from 'sqlite3'
 import { open } from 'sqlite'
 
+/*
+fetch('http://localhost:3000/api/pokemon_generate',{
+});*/
 
 const pokemondb = await open({
   filename: './database.db',
   driver: sqlite3.Database
 })
-/*
-await db.exec('CREATE TABLE tbl (col TEXT)')
-await db.exec('INSERT INTO generated_pokemons VALUES ("test")')
-*/
+
 await pokemondb.exec("CREATE TABLE IF NOT EXISTS generated_pokemons (name TEXT,description TEXT, type1 TEXT, type2 TEXT)")
 
 type ResponseData = {

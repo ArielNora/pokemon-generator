@@ -1,6 +1,8 @@
 # Pokémon Generator
 
-Welcome to the Pokémon Generator! This project allows you to generate random Pokémon with unique attributes, including names, types, and stats.
+Welcome to the Pokémon Generator! This project allows you to generate random Pokémon with unique attributes, including names, types, and description.
+
+[![Demo](https://share.gifyoutube.com/KzB6Gb.gif)](https://youtu.be/bo_qxd2meUk?si=EXdmlca8h424y817)
 
 ## Features
 
@@ -14,6 +16,13 @@ Generate Pokémon with random attributes powered by OpenAI's API.
 * **OpenAI API**
 
 ## Getting Started
+
+You can either run locally or use the website hosted on GCP :
+ 
+First send me a message via email to request an ID and password.\
+Go to the [Pokemon Generator Website](https://pokemon-generator-592889552765.europe-west9.run.app/)\
+Click on Login and input the ID and password.\
+Dont forget to Logout afterwards !
 
 To run the Pokémon Generator locally:
 
@@ -41,11 +50,6 @@ npm run dev
 ```
 
 Then open your browser and go to `http://localhost:3000` to start generating Pokémon!
-
-![Capture d’écran 2025-06-03 à 17 11 10](https://github.com/user-attachments/assets/da8adc90-10cc-4d11-adec-de4eb4d60e4f)
-
-<img width="1511" alt="Capture d’écran 2025-06-03 à 17 28 18" src="https://github.com/user-attachments/assets/20614aee-e832-4de3-9578-96e55a6eeb75" />
-
 
 ## License
 

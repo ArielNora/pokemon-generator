@@ -44,26 +44,6 @@ export default function PokemonDisplay({ pokemon }: { pokemon: Pokemon }) {
               {pokemon.pokedexEntry}
             </p>
           </div>
-
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Stats</h3>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <div className="space-y-2">
-                {Object.entries(pokemon.stats).map(([stat, value]) => (
-                  <div key={stat} className="flex items-center gap-2">
-                    <span className="font-medium w-24 text-gray-700 capitalize">{stat}:</span>
-                    <div className="h-4 bg-gray-200 rounded-full flex-1">
-                      <div
-                        className="h-full bg-blue-500 rounded-full"
-                        style={{ width: `${(value / 255) * 100}%` }}
-                      ></div>
-                    </div>
-                    <span className="w-8 text-right font-medium">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
